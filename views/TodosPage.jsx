@@ -3,6 +3,12 @@ import React from 'react'
 const TodosPage = (props) => {
   return (
     <div>
+                <nav>
+            <a href="/todos">Todos</a> <br/>
+            <a href="/groceries">Grocery List</a>
+            <a href="/pantry">Pantry</a>
+
+        </nav>
      <h1>Todos</h1>
      <button><a href="/todos/new">Add a Todo</a></button>
      <ul>
