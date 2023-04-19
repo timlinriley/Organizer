@@ -10,6 +10,9 @@ const GroceriesPage = (props) => {
         return(
         <li>Item: {product.product} {" "} Brand: {product.brand} {" "} Quantity: {product.quantity}
         <button><a href={`/groceries/${product._id}/edit`}>Update</a></button>
+        <form action={`/pantry/${product._id}`} METHOD="POST">
+            <input type="submit" value="Purchase" />
+        </form>
         <form action={`/groceries/${product._id}?_method=DELETE`} METHOD="POST">
             <input type="submit" value="DELETE" />
         </form>

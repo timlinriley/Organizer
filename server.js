@@ -82,6 +82,12 @@ app.post('/groceries', (req, res) => {
     });
 });
 
+// Create pantry from grocery list:
+app.post('/groceries/:id', (req, res) =>{
+    Pantry.create(req.params.id, (err, createdPantry) => {
+        res.redirect('/groceries');
+    })
+})
 // Todo delete:
 app.delete('/todos/:id', (req, res) => {
     Todos.findByIdAndRemove(req.params.id, (err, data)=>{
