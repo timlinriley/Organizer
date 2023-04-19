@@ -43,6 +43,15 @@ app.get('/todos', (req, res) =>{
 });
 
 
+app.get('/todos/new', (req, res) => {
+    res.render('NewTodo');
+});
+
+app.post('/todos', (req, res) => {
+    Todos.create(req.body, (error, createdTodo) => {
+        res.redirect('/todos');
+    });
+});
 
 
 
