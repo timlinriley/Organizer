@@ -73,10 +73,16 @@ app.post('/groceries', (req, res) => {
     });
 });
 
-
+// Todo delete:
 app.delete('/todos/:id', (req, res) => {
     Todos.findByIdAndRemove(req.params.id, (err, data)=>{
         res.redirect('/todos');
+    });
+});
+// Grocery Delete:
+app.delete('/groceries/:id', (req, res) => {
+    Groceries.findByIdAndRemove(req.params.id, (err, data)=>{
+        res.redirect('/groceries');
     });
 });
 

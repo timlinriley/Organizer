@@ -9,10 +9,10 @@ const GroceriesPage = (props) => {
      {props.groceries.map((product, i)=>{
         return(
         <li>Item: {product.product} {" "} Brand: {product.brand} {" "} Quantity: {product.quantity}
-        {/* <button><a href={`/todos/${todo._id}/edit`}>Update</a></button>
-        <form action={`/todos/${todo._id}?_method=DELETE`} METHOD="POST">
+        {/* <button><a href={`/todos/${todo._id}/edit`}>Update</a></button> */}
+        <form action={`/groceries/${product._id}?_method=DELETE`} METHOD="POST">
             <input type="submit" value="DELETE" />
-        </form> */}
+        </form>
         </li>
         )
      })}
