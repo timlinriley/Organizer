@@ -34,10 +34,11 @@ app.use(methodOverride('_method'));
     console.log('connected to mongo');
 });
 
+// Home: 
 app.get('/', (req, res) => {
     res.render('Home')
 });
-
+// Todos Home:
 app.get('/todos', (req, res) =>{
     Todos.find({}, (error, allTodos)=>{
         res.render('TodosPage', { todos: allTodos});
@@ -48,6 +49,13 @@ app.get('/todos', (req, res) =>{
 app.get('/groceries', (req, res) => {
     Groceries.find({}, (error, allGroceries)=>{
         res.render('GroceriesPage', {groceries: allGroceries});
+    });
+});
+
+// Pantry Get:
+app.get('/pantry', (req, res) => {
+    Pantry.find({}, (error, allPantry)=>{
+        res.render('PantryPage', {items: allPantry});
     });
 });
 
