@@ -60,8 +60,32 @@ app.delete('/todos/:id', (req, res) => {
     });
 });
 
+app.get('/todos/:id/edit', (req, res)=>{
+    Todos.findById(req.params.id, (err, foundTodo)=>{ 
+      if(!err){
+        res.render(
+              'EditToDos',
+            {
+                todo: foundTodo 
+            }
+        );
+    } else {
+      res.send({ msg: err.message })
+    }
+    });
+});
 
-
+app.put('/todos/:id', (req, res)=>{
+    if(req.body.completed === 'on'){
+        req.body.completed= true;
+    } else {
+        req.body.completed = false;
+    }
+    Todos.findByIdAndUpdate(req.params.id, req.body, (err, updatedTodo)=>{
+       console.log(updatedTodo)
+        res.redirect(`/todos`);
+    });
+});
 
 
 
