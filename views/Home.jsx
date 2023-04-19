@@ -4,7 +4,7 @@ const Home = () => {
   return (
     <div>
         <nav>
-            <a href="/todos">Todos</a> <br/>
+            <a href="/todos">Todos</a> 
             <a href="/groceries">Grocery List</a>
             <a href="/pantry">Pantry</a>
 
