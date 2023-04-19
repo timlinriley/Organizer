@@ -7,7 +7,7 @@ const NewGrocery = () => {
         <form action="/groceries" method="POST">
             <input type="text" placeholder="Add a Grocery" name="product" />
             <input type="text" placeholder="Specific Brand?" name="brand" />
-            <input type="number" placeholder="quantity" name="quantity" />
+            <input type="number" placeholder="Quantity" name="quantity" />
             <input type="submit" value="Add Grocery" />
         </form>   
     </div>

@@ -67,7 +67,7 @@ app.get('/groceries/new', (req, res) => {
     res.render('NewGrocery');
 });
 
-app.post('/todos', (req, res) => {
+app.post('/groceries', (req, res) => {
     Groceries.create(req.body, (error, createdGrocery) => {
         res.redirect('/groceries');
     });
