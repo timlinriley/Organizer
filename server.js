@@ -50,6 +50,8 @@ app.get('/groceries', (req, res) => {
     });
 });
 
+
+// New Todo:
 app.get('/todos/new', (req, res) => {
     res.render('NewTodo');
 });
@@ -57,6 +59,17 @@ app.get('/todos/new', (req, res) => {
 app.post('/todos', (req, res) => {
     Todos.create(req.body, (error, createdTodo) => {
         res.redirect('/todos');
+    });
+});
+
+// New Grocery:
+app.get('/groceries/new', (req, res) => {
+    res.render('NewGrocery');
+});
+
+app.post('/todos', (req, res) => {
+    Groceries.create(req.body, (error, createdGrocery) => {
+        res.redirect('/groceries');
     });
 });
 
