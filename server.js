@@ -86,6 +86,7 @@ app.delete('/groceries/:id', (req, res) => {
     });
 });
 
+// Todo edit:
 app.get('/todos/:id/edit', (req, res)=>{
     Todos.findById(req.params.id, (err, foundTodo)=>{ 
       if(!err){
@@ -113,8 +114,31 @@ app.put('/todos/:id', (req, res)=>{
     });
 });
 
+// Groery Edit:
+app.get('/groceries/:id/edit', (req, res)=>{
+    Groceries.findById(req.params.id, (err, foundGrocery)=>{ 
+      if(!err){
+        res.render(
+              'EditGroceries',
+            {
+                grocery: foundGrocery
+            }
+        );
+    } else {
+      res.send({ msg: err.message })
+    }
+    });
+});
+
+app.put('/groceries/:id', (req, res)=>{
+    Groceries.findByIdAndUpdate(req.params.id, req.body, (err, updatedGrocery)=>{
+       console.log(updatedGrocery)
+        res.redirect(`/groceries`);
+    });
+});
 
 
+// Listener:
 app.listen(3001, function () {
     console.log('Listening on port 3001');
   });
