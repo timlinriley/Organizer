@@ -36,6 +36,12 @@ app.get('/', (req, res) => {
     res.render('Home')
 });
 
+app.get('/todos', (req, res) =>{
+    Todos.find({}, (error, allTodos)=>{
+        res.render('TodosPage', { todos: allTodos});
+    });
+});
+
 
 
 
