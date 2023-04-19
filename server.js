@@ -170,6 +170,30 @@ app.delete('/pantry/:id', (req, res) => {
     });
 });
 
+// Pantry edit:
+
+app.get('/pantry/:id/edit', (req, res)=>{
+    Pantry.findById(req.params.id, (err, foundPantry)=>{ 
+      if(!err){
+        res.render(
+              'EditPantry',
+            {
+                pantry: foundPantry
+            }
+        );
+    } else {
+      res.send({ msg: err.message })
+    }
+    });
+});
+
+app.put('/Pantry/:id', (req, res)=>{
+    Pantry.findByIdAndUpdate(req.params.id, req.body, (err, updatedPantry)=>{
+       console.log(updatedPantry)
+        res.redirect(`/pantry');
+    });
+});
+
 
 
 // Listener:
