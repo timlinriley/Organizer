@@ -8,6 +8,7 @@ const mongoose = require('mongoose');
 const app = express();
 const PORT = 3001
 const Todos = require('./models/Todos');
+const Groceries = require('./models/Groceries')
 const methodOverride = require('method-override');
 // ------middleware
 
