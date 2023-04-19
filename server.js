@@ -7,6 +7,7 @@ const mongoose = require('mongoose');
 // Create our express app
 const app = express();
 const PORT = 3001
+const Todos = require('./models/Todos');
 const methodOverride = require('method-override');
 // ------middleware
 
@@ -31,7 +32,9 @@ app.use(methodOverride('_method'));
     console.log('connected to mongo');
 });
 
-
+app.get('/', (req, res) => {
+    res.render('Home')
+});
 
 
 
