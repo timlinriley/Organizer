@@ -9,6 +9,7 @@ const app = express();
 const PORT = 3001
 const Todos = require('./models/Todos');
 const Groceries = require('./models/Groceries')
+const Pantry = require('./models/Pantry')
 const methodOverride = require('method-override');
 // ------middleware
 
