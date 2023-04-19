@@ -1,0 +1,17 @@
+import React from 'react'
+
+const NewGrocery = () => {
+  return (
+    <div>
+            <h2>Add a new Grocery item to your list</h2>
+        <form action="/pantry" method="POST">
+            <input type="text" placeholder="Add purchased item" name="product" />
+            <input type="text" placeholder="Specific Brand?" name="brand" />
+            <input type="number" placeholder="Quantity" name="quantity" />
+            <input type="date" placeholder="Estimated Expiration date" name="expiration" />
+            <input type="submit" value="Add Purchased Item" />
+        </form>   
+    </div>
+  )
+}
+module.exports = NewGrocery;

@@ -82,6 +82,17 @@ app.post('/groceries', (req, res) => {
     });
 });
 
+// New Pantry item:
+app.get('/pantry/new', (req, res) => {
+    res.render('NewPantry');
+});
+
+app.post('/pantry', (req, res) => {
+    Pantry.create(req.body, (error, createdPantry) => {
+        res.redirect('/pantry');
+    });
+});
+
 // Create pantry from grocery list:
 app.post('/groceries/:id', (req, res) =>{
     Pantry.create(req.params.id, (err, createdPantry) => {
