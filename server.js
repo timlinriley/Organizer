@@ -43,6 +43,12 @@ app.get('/todos', (req, res) =>{
     });
 });
 
+// Groceries Get:
+app.get('/groceries', (req, res) => {
+    Groceries.find({}, (error, allGroceries)=>{
+        res.render('GroceriesPage', {groceries: allGroceries});
+    });
+});
 
 app.get('/todos/new', (req, res) => {
     res.render('NewTodo');
