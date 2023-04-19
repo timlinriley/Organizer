@@ -54,6 +54,12 @@ app.post('/todos', (req, res) => {
 });
 
 
+app.delete('/todos/:id', (req, res) => {
+    Todos.findByIdAndRemove(req.params.id, (err, data)=>{
+        res.redirect('/todos');
+    });
+});
+
 
 
 

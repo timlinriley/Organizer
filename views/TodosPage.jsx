@@ -8,7 +8,11 @@ const TodosPage = (props) => {
      <ul>
      {props.todos.map((todo, i)=>{
         return(
-        <li>{todo.item} - Priority: {todo.priority}</li>
+        <li>{todo.item} - Priority: {todo.priority}
+        <form action={`/todos/${todo._id}?_method=DELETE`} METHOD="POST">
+            <input type="submit" value="DELETE" />
+        </form>
+        </li>
         )
      })}
      </ul>
