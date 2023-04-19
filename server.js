@@ -190,13 +190,13 @@ app.get('/pantry/:id/edit', (req, res)=>{
 app.put('/Pantry/:id', (req, res)=>{
     Pantry.findByIdAndUpdate(req.params.id, req.body, (err, updatedPantry)=>{
        console.log(updatedPantry)
-        res.redirect(`/pantry');
+        res.redirect(`/pantry`);
     });
 });
 
 
 
-// Listener:
+// // Listener:
 app.listen(3001, function () {
     console.log('Listening on port 3001');
   });

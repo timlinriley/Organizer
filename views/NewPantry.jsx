@@ -3,6 +3,12 @@ import React from 'react'
 const NewGrocery = () => {
   return (
     <div>
+                <nav>
+            <a href="/todos">Todos</a> <br/>
+            <a href="/groceries">Grocery List</a>
+            <a href="/pantry">Pantry</a>
+
+        </nav>
             <h2>Add a purchased item to your pantry list</h2>
         <form action="/pantry" method="POST">
             <input type="text" placeholder="Add purchased item" name="product" />
