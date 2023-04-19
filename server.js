@@ -94,11 +94,11 @@ app.post('/pantry', (req, res) => {
 });
 
 // Create pantry from grocery list:
-app.post('/groceries/:id', (req, res) =>{
-    Pantry.create(req.params.id, (err, createdPantry) => {
-        res.redirect('/groceries');
-    })
-})
+// app.post('/groceries/:id', (req, res) =>{
+//     Pantry.create(req.params.id, (err, createdPantry) => {
+//         res.redirect('/groceries');
+//     })
+// })
 // Todo delete:
 app.delete('/todos/:id', (req, res) => {
     Todos.findByIdAndRemove(req.params.id, (err, data)=>{
@@ -140,7 +140,7 @@ app.put('/todos/:id', (req, res)=>{
     });
 });
 
-// Groery Edit:
+// Grocery Edit:
 app.get('/groceries/:id/edit', (req, res)=>{
     Groceries.findById(req.params.id, (err, foundGrocery)=>{ 
       if(!err){
@@ -162,6 +162,14 @@ app.put('/groceries/:id', (req, res)=>{
         res.redirect(`/groceries`);
     });
 });
+
+// Pantry delete:
+app.delete('/pantry/:id', (req, res) => {
+    Pantry.findByIdAndRemove(req.params.id, (err, data)=>{
+        res.redirect('/pantry');
+    });
+});
+
 
 
 // Listener:

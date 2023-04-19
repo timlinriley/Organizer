@@ -3,7 +3,7 @@ import React from 'react'
 const NewGrocery = () => {
   return (
     <div>
-            <h2>Add a new Grocery item to your list</h2>
+            <h2>Add a purchased item to your pantry list</h2>
         <form action="/pantry" method="POST">
             <input type="text" placeholder="Add purchased item" name="product" />
             <input type="text" placeholder="Specific Brand?" name="brand" />
