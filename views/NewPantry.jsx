@@ -11,8 +11,30 @@ const NewGrocery = () => {
         paddingTop: "20px",
         fontSize: "50px"
     }
+    const formStyle = {
+        marginTop: "20px",
+        fontWeight: "bold",
+        border: "solid black",
+        padding: "10px"
+        
+    }
+    const inputStyle = {
+        margin: "8px"
+    }
+    const submitButton = {
+        padding: "10px",
+        border: "black",
+        borderRadius: "5%",
+        backgroundColor: "beige",
+        marginTop: "4px",
+        marginLeft: "20px",
+    }
+    const background = {
+        backgroundColor: "gray",
+        height: "400vh"
+    }
   return (
-    <div>
+    <div style={background}>
                 <nav style={navStyle}>
             <a href="/todos">Todos</a> 
             <a href="/groceries">Grocery List</a>
@@ -20,12 +42,12 @@ const NewGrocery = () => {
 
         </nav>
             <h2>Add a purchased item to your pantry list</h2>
-        <form action="/pantry" method="POST">
-            <input type="text" placeholder="Add purchased item" name="product" />
-            <input type="text" placeholder="Specific Brand?" name="brand" />
-            <input type="number" placeholder="Quantity" name="quantity" />
-            <input type="date" placeholder="Estimated Expiration date" name="expiration" />
-            <input type="submit" value="Add Purchased Item" />
+        <form style={formStyle} action="/pantry" method="POST">
+            <input style={inputStyle} type="text" placeholder="Add purchased item" name="product" />
+            <input style={inputStyle} type="text" placeholder="Specific Brand?" name="brand" />
+            <input style={inputStyle} type="number" placeholder="Quantity" name="quantity" />
+            <input style={inputStyle} type="date" placeholder="Estimated Expiration date" name="expiration" />
+            <input style={submitButton} type="submit" value="Add Purchased Item" />
         </form>   
     </div>
   )
