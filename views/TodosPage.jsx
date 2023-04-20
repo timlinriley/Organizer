@@ -66,12 +66,16 @@ const TodosPage = (props) => {
      <ul>
      {props.todos.map((todo, i)=>{
         return(
-        <li>{todo.item} - Priority: {todo.priority}
-        <button><a href={`/todos/${todo._id}/edit`}>Update</a></button>
+            <div style={itemStyle}>
+        <li style={listItem}><span style={spannedItem}>Todo:</span> {todo.item} {" "} <span style={spannedItem}>Priority:</span> {todo.priority}
+            <div style={buttons}>
+        <button style={inputStyle}><a href={`/todos/${todo._id}/edit`}>Update</a></button>
         <form action={`/todos/${todo._id}?_method=DELETE`} METHOD="POST">
-            <input type="submit" value="DELETE" />
+            <input style={deleteStyle} type="submit" value="DELETE" />
         </form>
+        </div>
         </li>
+        </div>
         )
      })}
      </ul>
