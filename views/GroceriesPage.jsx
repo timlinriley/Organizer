@@ -1,9 +1,20 @@
 import React from 'react'
 
 const GroceriesPage = (props) => {
+
+    const navStyle = {
+        display: "flex",
+        justifyContent: "space-around",
+        backgroundColor: "DodgerBlue",
+        padding: "10px",
+        fontFamily: "Arial",
+        height: "8vh",
+        paddingTop: "20px",
+        fontSize: "50px"
+    }
   return (
     <div>
-                <nav>
+                <nav style={navStyle}>
             <a href="/todos">Todos</a>
             <a href="/groceries">Grocery List</a>
             <a href="/pantry">Pantry</a>

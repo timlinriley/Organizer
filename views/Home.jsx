@@ -18,15 +18,30 @@ const Home = () => {
         getWeather()
         console.log(clicked)
     }
+
+    const navStyle = {
+        display: "flex",
+        justifyContent: "space-around",
+        backgroundColor: "DodgerBlue",
+        padding: "10px",
+        fontFamily: "Arial",
+        height: "8vh",
+        paddingTop: "20px",
+        fontSize: "50px"
+    }
+    const h1Style = {
+        textAlign: "center",
+        fontSize: "50px"
+    }
   return (
     <div>
-        <nav>
+        <nav style={navStyle}>
             <a href="/todos">Todos</a> 
             <a href="/groceries">Grocery List</a>
             <a href="/pantry">Pantry</a>
 
         </nav>
-        <h1>Welcome to the personal organizer app!</h1>
+        <h1 style={h1Style}>Welcome to the personal organizer app!</h1>
         <button onClick={handleClick}>Show Weather</button>
       <h4>{weather}{console.log(weather)}</h4>
     </div>

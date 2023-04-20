@@ -145,7 +145,7 @@ app.get('/groceries/:id/edit', (req, res)=>{
     Groceries.findById(req.params.id, (err, foundGrocery)=>{ 
       if(!err){
         res.render(
-              'EditGroceries',
+              'EditGrocery',
             {
                 grocery: foundGrocery
             }
