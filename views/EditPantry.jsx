@@ -41,6 +41,8 @@ const EditGrocery = (props) => {
 
     <div style={background}>
                 <nav style={navStyle}>
+                
+            <a href="/">Home</a>
             <a href="/todos">Todos</a> 
             <a href="/groceries">Grocery List</a>
             <a href="/pantry">Pantry</a>
