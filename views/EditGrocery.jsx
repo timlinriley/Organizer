@@ -19,8 +19,22 @@ const EditGrocery = (props) => {
     const inputStyle = {
         margin: "8px"
     }
+
+    const background = {
+        backgroundColor: "gray",
+        height: "400vh"
+    }
+
+    const submitButton = {
+        padding: "10px",
+        border: "black",
+        borderRadius: "5%",
+        backgroundColor: "beige",
+        marginTop: "4px",
+        marginLeft: "20px",
+    }
   return (
-    <div>
+    <div style={background}>
                 <nav style={navStyle}>
             <a href="/todos">Todos</a> 
             <a href="/groceries">Grocery List</a>
@@ -31,7 +45,7 @@ const EditGrocery = (props) => {
         Product:<input style={inputStyle} type="text" placeholder={`${props.grocery.product}`} name="product" />
         Brand:<input style={inputStyle} type="text" placeholder={`${props.grocery.brand}`} name="brand" />
        Quantity:<input style={inputStyle} type="number" placeholder={`${props.grocery.quantity}`} name="quantity" />
-        <input type="submit" value="Update Grocery Item" />      
+        <input style={submitButton} type="submit" value="Update Grocery Item" />      
         </form> 
 
     </div>
