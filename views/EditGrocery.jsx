@@ -13,7 +13,10 @@ const EditGrocery = (props) => {
     }
     const formStyle = {
         marginTop: "20px",
-        fontWeight: "bold"
+        fontWeight: "bold",
+        border: "solid black",
+        padding: "10px"
+        
     }
 
     const inputStyle = {

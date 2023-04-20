@@ -12,22 +12,46 @@ const EditGrocery = (props) => {
         paddingTop: "20px",
         fontSize: "50px"
     }
+    const formStyle = {
+        marginTop: "20px",
+        fontWeight: "bold",
+        border: "solid black",
+        padding: "10px"
+        
+    }
 
+    const inputStyle = {
+        margin: "8px"
+    }
+
+    const background = {
+        backgroundColor: "gray",
+        height: "400vh"
+    }
+
+    const submitButton = {
+        padding: "10px",
+        border: "black",
+        borderRadius: "5%",
+        backgroundColor: "beige",
+        marginTop: "4px",
+        marginLeft: "20px",
+    }
   return (
 
-    <div>
+    <div style={background}>
                 <nav style={navStyle}>
             <a href="/todos">Todos</a> 
             <a href="/groceries">Grocery List</a>
             <a href="/pantry">Pantry</a>
 
         </nav>
-        <p>Product: {props.pantry.product} {" "} Brand: {props.pantry.brand} {" "} Quantity: {props.pantry.quantity}</p>
-        <form action={`/pantry/${props.pantry._id}?_method=PUT`} method="POST">
-        <input type="text" placeholder="Edit Item" name="product" />
-        <input type="text" placeholder="Edit Brand" name="brand" />
-       <input type="number" placeholder="Quantity" name="quantity" />
-        <input type="submit" value="Update Pantry Item" />      
+        <h1>Edit Pantry Item:</h1>
+        <form style={formStyle} action={`/pantry/${props.pantry._id}?_method=PUT`} method="POST">
+       Product: <input style={inputStyle} type="text" placeholder={props.pantry.product} name="product" />
+        Brand: <input style={inputStyle} type="text" placeholder={props.pantry.brand} name="brand" />
+       Quantity: <input style={inputStyle} type="number" placeholder={props.pantry.quantity} name="quantity" />
+        <input style={submitButton} type="submit" value="Update Pantry Item" />      
         </form> 
 
     </div>
