@@ -12,6 +12,47 @@ const PantryPage = (props) => {
         paddingTop: "20px",
         fontSize: "50px"
     }
+    const listItem = {
+        display: "flex",
+        padding: "10px",
+        margin: "8px"
+    }
+    const inputStyle = {
+        marginLeft: "5px",
+        marginRight: "5px",
+        padding: "10px",
+        fontWeight: "bold",
+    }
+    const deleteStyle = {
+        marginLeft: "5px",
+        marginRight: "5px",
+        padding: "10px",
+        fontWeight: "bold",
+        backgroundColor: "red"
+    }
+    const itemStyle = {
+        border: "solid black",
+        margin: "2px",
+        backgroundColor: "darkgray",
+        fontSize: "20px"
+  
+    }
+    const buttons = {
+        display: "flex",
+        alignSelf: "end",
+        marginLeft: "280px"
+    }
+    const spannedItem = {
+        fontWeight: "bold",
+        marginRight: "6px",
+        marginLeft: "10px"
+        
+    }
+    const add = {
+        marginLeft: "50px",
+        padding: "10px",
+        fontWeight: "bold"
+    }
   return (
     <div>
                 <nav style={navStyle}>
@@ -20,17 +61,19 @@ const PantryPage = (props) => {
             <a href="/pantry">Pantry</a>
 
         </nav>
-                    <h1>What we have</h1>
-     <button><a href="/pantry/new">Purchased somehing? Add it to this list</a></button>
+                    <h1>What we have at home:</h1>
+     <button style={add}><a href="/pantry/new">Purchased somehing? Add it to this list</a></button>
      <ul>
      {props.items.map((item, i)=>{
         return(
-        <li>Item: {item.product} {" "} Brand: {item.brand} {" "} Quantity: {item.quantity} {" "} 
-        <button><a href={`/pantry/${item._id}/edit`}>Update</a></button>
+            <div style={itemStyle}>
+        <li style={listItem}> <span style={spannedItem}>Item:</span> {item.product} {" "}<span style={spannedItem}> Brand:</span> {item.brand} {" "} <span style={spannedItem}>Quantity:</span> {item.quantity} {" "} 
+        <button style={inputStyle}><a href={`/pantry/${item._id}/edit`}>Update</a></button>
         <form action={`/pantry/${item._id}?_method=DELETE`} METHOD="POST">
-            <input type="submit" value="DELETE" />
+            <input style={deleteStyle}type="submit" value="DELETE" />
         </form>
         </li>
+        </div>
         )
      })}
      </ul>

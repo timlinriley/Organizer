@@ -12,6 +12,47 @@ const TodosPage = (props) => {
         paddingTop: "20px",
         fontSize: "50px"
     }
+    const listItem = {
+        display: "flex",
+        padding: "10px",
+        margin: "8px"
+    }
+    const inputStyle = {
+        marginLeft: "5px",
+        marginRight: "5px",
+        padding: "10px",
+        fontWeight: "bold",
+    }
+    const deleteStyle = {
+        marginLeft: "5px",
+        marginRight: "5px",
+        padding: "10px",
+        fontWeight: "bold",
+        backgroundColor: "red"
+    }
+    const itemStyle = {
+        border: "solid black",
+        margin: "2px",
+        backgroundColor: "darkgray",
+        fontSize: "20px"
+  
+    }
+    const buttons = {
+        display: "flex",
+        alignSelf: "end",
+        marginLeft: "280px"
+    }
+    const spannedItem = {
+        fontWeight: "bold",
+        marginRight: "6px",
+        marginLeft: "10px"
+        
+    }
+    const add = {
+        marginLeft: "50px",
+        padding: "10px",
+        fontWeight: "bold"
+    }
   return (
     <div>
                 <nav style={navStyle}>
@@ -21,7 +62,7 @@ const TodosPage = (props) => {
 
         </nav>
      <h1>Todos</h1>
-     <button><a href="/todos/new">Add a Todo</a></button>
+     <button style={add}><a href="/todos/new">Add a Todo</a></button>
      <ul>
      {props.todos.map((todo, i)=>{
         return(
