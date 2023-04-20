@@ -16,7 +16,8 @@ const NewToDo = () => {
         marginTop: "20px",
         fontWeight: "bold",
         border: "solid black",
-        padding: "10px"
+        padding: "10px",
+        backgroundColor: "lightgray"
         
     }
     const inputStyle = {

@@ -16,7 +16,8 @@ const NewGrocery = () => {
         marginTop: "20px",
         fontWeight: "bold",
         border: "solid black",
-        padding: "10px"
+        padding: "10px",
+        backgroundColor:"lightgray"
         
     }
     const inputStyle = {
@@ -26,7 +27,8 @@ const NewGrocery = () => {
         padding: "10px",
         border: "black",
         borderRadius: "5%",
-        backgroundColor: "beige",
+        backgroundColor: "green",
+        fontWeight: "bold",
         marginTop: "4px",
         marginLeft: "20px",
     }
