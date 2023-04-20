@@ -41,6 +41,7 @@ const EditGrocery = (props) => {
             <a href="/pantry">Pantry</a>
 
         </nav>
+        <h1>Edit Grocery List Item:</h1>
         <form style={formStyle} action={`/groceries/${props.grocery._id}?_method=PUT`} method="POST">
         Product:<input style={inputStyle} type="text" placeholder={`${props.grocery.product}`} name="product" />
         Brand:<input style={inputStyle} type="text" placeholder={`${props.grocery.brand}`} name="brand" />
