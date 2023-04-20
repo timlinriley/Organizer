@@ -11,6 +11,14 @@ const EditGrocery = (props) => {
         paddingTop: "20px",
         fontSize: "50px"
     }
+    const formStyle = {
+        marginTop: "20px",
+        fontWeight: "bold"
+    }
+
+    const inputStyle = {
+        margin: "8px"
+    }
   return (
     <div>
                 <nav style={navStyle}>
@@ -19,10 +27,10 @@ const EditGrocery = (props) => {
             <a href="/pantry">Pantry</a>
 
         </nav>
-        <form action={`/groceries/${props.grocery._id}?_method=PUT`} method="POST">
-        <input type="text" placeholder="Edit Item" name="product" />
-        <input type="text" placeholder="Edit Brand" name="brand" />
-       <input type="number" placeholder="Quantity" name="quantity" />
+        <form style={formStyle} action={`/groceries/${props.grocery._id}?_method=PUT`} method="POST">
+        Product:<input style={inputStyle} type="text" placeholder={`${props.grocery.product}`} name="product" />
+        Brand:<input style={inputStyle} type="text" placeholder={`${props.grocery.brand}`} name="brand" />
+       Quantity:<input style={inputStyle} type="number" placeholder={`${props.grocery.quantity}`} name="quantity" />
         <input type="submit" value="Update Grocery Item" />      
         </form> 
 
